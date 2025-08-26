@@ -1,0 +1,56 @@
+# Symfony
+/var/
+/vendor/
+.env.local
+.env.*.local
+.env.test
+.env.test.local
+
+# Composer
+composer.phar
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Cache
+cache/
+*.cache
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+build/
+dist/
+
+# Test coverage
+coverage/
+.phpunit.result.cache
+
+# Environment files
+.env
+.env.local.php
+.env.*.local.php
+
+# Symfony cache
+var/cache/
+var/logs/
+var/sessions/
+
+# Backup files
+*.bak
+*.backup
