@@ -24,9 +24,9 @@ class ChargeRequest
         $cardData = $data['card'] ?? [];
         $this->card = new CardDto(
             $cardData['number'] ?? '',
-            $cardData['expMonth'] ?? $cardData['exp_month'] ?? 0,
-            $cardData['expYear'] ?? $cardData['exp_year'] ?? 0,
-            $cardData['cvv'] ?? $cardData['cvc'] ?? ''
+            $cardData['expMonth'] ?? 0,
+            $cardData['expYear'] ?? 2025,
+            $cardData['cvv'] ?? ''
         );
     }
 }

@@ -85,13 +85,13 @@ class ApiIntegrationTest extends TestCase
         // Test refund endpoint as bonus requirement
         
         $refundData = [
-            'chargeId' => 'char_123456789',
+            'transactionId' => 'char_123456789',
             'amount' => 25.99
         ];
         
         $refundRequest = new RefundRequest($refundData);
         
-        $this->assertEquals('char_123456789', $refundRequest->chargeId, 'Charge ID should match');
+        $this->assertEquals('char_123456789', $refundRequest->transactionId, 'Charge ID should match');
         $this->assertEquals(25.99, $refundRequest->amount, 'Refund amount should match');
     }
 

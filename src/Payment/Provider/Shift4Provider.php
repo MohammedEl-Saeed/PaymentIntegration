@@ -69,8 +69,9 @@ class Shift4Provider implements PaymentProviderInterface
         if ($req->amount !== null) {
             $payload['amount'] = (int) round($req->amount * 100);
         }
+        $payload['chargeId'] = $req->transactionId ?? 0;
 
-        $response = $this->http->request('POST', $this->baseUrl.'/charges/'.$req->chargeId.'/refunds', [
+        $response = $this->http->request('POST', $this->baseUrl.'/refunds', [
             'auth_basic' => [$this->secretKey, ''],
             'headers'    => ['Content-Type' => 'application/json'],
             'json'       => $payload ?: (object)[],

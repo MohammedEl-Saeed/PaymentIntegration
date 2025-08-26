@@ -94,13 +94,13 @@ Content-Type: application/json
 **Request Body:**
 ```json
 {
-  "chargeId": "char_KAUdq308nlyN8iGBs6myayQq",
+  "transactionId": "char_KAUdq308nlyN8iGBs6myayQq",
   "amount": 25.99
 }
 ```
 
 **Field Descriptions:**
-- `chargeId` (string, required): Original charge transaction ID
+- `transactionId` (string, required): Original charge transaction ID
 - `amount` (float, optional): Refund amount (if null, refunds full amount)
 
 **Success Response (200):**
@@ -152,7 +152,7 @@ curl -X POST http://localhost:8000/api/charge \
 curl -X POST http://localhost:8000/api/refund \
   -H "Content-Type: application/json" \
   -d '{
-    "chargeId": "char_KAUdq308nlyN8iGBs6myayQq",
+    "transactionId": "char_KAUdq308nlyN8iGBs6myayQq",
     "amount": 25.99
   }'
 ```
@@ -181,7 +181,7 @@ Invoke-WebRequest -Uri "http://localhost:8000/api/charge" `
 #### Test Refund Endpoint
 ```powershell
 $refundBody = '{
-  "chargeId": "char_KAUdq308nlyN8iGBs6myayQq",
+  "transactionId": "char_KAUdq308nlyN8iGBs6myayQq",
   "amount": 25.99
 }'
 
@@ -218,7 +218,7 @@ Invoke-WebRequest -Uri "http://localhost:8000/api/refund" `
    - Body (raw JSON):
    ```json
    {
-     "chargeId": "char_KAUdq308nlyN8iGBs6myayQq",
+     "transactionId": "char_KAUdq308nlyN8iGBs6myayQq",
      "amount": 25.99
    }
    ```

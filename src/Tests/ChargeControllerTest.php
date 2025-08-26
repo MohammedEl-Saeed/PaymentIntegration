@@ -35,13 +35,13 @@ class ChargeControllerTest extends TestCase
     public function testRefundRequestCreation(): void
     {
         $data = [
-            'chargeId' => 'char_123456789',
+            'transactionId' => 'char_123456789',
             'amount' => 25.99
         ];
 
         $refundRequest = new RefundRequest($data);
         
-        $this->assertEquals('char_123456789', $refundRequest->chargeId);
+        $this->assertEquals('char_123456789', $refundRequest->transactionId);
         $this->assertEquals(25.99, $refundRequest->amount);
     }
 

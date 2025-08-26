@@ -78,6 +78,28 @@ src/
 ### POST /api/charge
 Process payment transactions with real-time validation and comprehensive error handling.
 
+### request example:
+{
+    "amount": 25.99,
+     "currency": "USD",
+      "card": 
+       {
+        "number": "4909069612259316",
+        "expMonth": 12,
+        "expYear": 2028,
+        "cvv": "123"
+       }
+}
+
+##response example:
+
+{
+    "transactionId": "char_uLtDIKTGIDsPdUllFRMAK2dJ",
+    "status": "success",
+    "amount": 25.99,
+    "currency": "USD"
+}
+
 **Features:**
 - Automatic card validation
 - Real-time payment processing
@@ -86,6 +108,20 @@ Process payment transactions with real-time validation and comprehensive error h
 
 ### POST /api/refund
 Handle refunds with automatic charge verification and status tracking.
+
+### request example:
+{
+    "amount": 25.99,
+    "transactionId" : "char_IwSY9j0WDdQL8CgB7WU3xfbm"
+}
+
+##response example:
+
+{
+    "status": "success",
+    "refundId": "re_YrMvJ3zHzQsamaWBmnh38BKO"
+}
+
 
 **Features:**
 - Charge ID validation
@@ -199,7 +235,7 @@ Architecture that scales with business needs. Easy to add features like webhooks
 
 ## 🏆 Success Metrics
 
-- **100% Task Compliance** ✅
+- **Task Compliance** ✅
 - **Zero Linting Errors** ✅
 - **Real API Integration** ✅
 - **Extensible Architecture** ✅
